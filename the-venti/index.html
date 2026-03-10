@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THEVENTI</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="THEVENTI">
+    <meta property="og:image" content="">
+    <link rel="icon" href="img/faviconV2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../font/pretendard/pre.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <!-- header -->
+            <div class="h-in">
+                <h1 class="h-logo"><a href="#"><img src="img/theventi_h_logo.png" alt="로고"></a></h1>
+                <!-- all-menu생성 > calss="on" 추가 -->
+                <nav class="">
+                    <ul>
+                        <!-- class=click 생성 -->
+                        <li class=""><a href="#"><span class="tit-m">브랜드</span></a>
+                            <ul class="depth">
+                                <li><a href="#">더벤티 소개</a></li>
+                                <li><a href="#">더벤티 연혁</a></li>
+                                <li><a href="#">BI 소개</a></li>
+                                <li><a href="#">찾아오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li class=""><a href="#"><span class="tit-m">메뉴</span></a>
+                            <ul class="depth">
+                                <li><a href="#">더벤티 커피이야기</a></li>
+                                <li><a href="#">신메뉴</a></li>
+                                <li><a href="#">전체메뉴</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="tit-m">매장</span></a>
+                            <ul class="depth">
+                                <li><a href="#">매장찾기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="tit-m">멤버십</span></a>
+                            <ul class="depth">
+                                <li><a href="#">더벤티 APP소개</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="tit-m">커뮤니티</span></a>
+                            <ul class="depth">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">보도자료</a></li>
+                                <li><a href="#">칭찬매장</a></li>
+                                <li><a href="#">더벤티이야기</a></li>
+                                <li><a href="#">SNS</a></li>
+                                <li><a href="#">자주하는 질문</a></li>
+                                <li><a href="#">벤티럭 사연접수</a></li>
+                                <li><a href="#">THEVENGERS 봉사활동</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="h-right">
+                    <a href="#"><span>창업안내</span></a>
+                    <!-- btn-ham에 on 이벤트 추가 -->
+                    <button type="button" class="btn-ham">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <script>
+            const btn = document.querySelector('.btn-ham');
+            const mobileMenu = document.querySelector("nav");
+            btn.addEventListener("click", function () {
+                btn.classList.toggle("on");
+                mobileMenu.classList.toggle("on");
+            })
+            const mBtn = document.querySelectorAll(".tit-m");
+            mBtn.forEach((mbtn, index) => {
+                mbtn.addEventListener("click", function () {
+                    // 클릭한 버튼의 부모의 부모가 'click' 클래스를 이미 가지고 있는지 확인
+                    const parentParent = mbtn.parentElement.parentElement;
+                    const isActive = parentParent.classList.contains("click");
+
+                    // 모든 버튼의 부모의 부모에서 'click' 클래스 제거
+                    mBtn.forEach(otherbtn => otherbtn.parentElement.parentElement.classList.remove("click"));
+
+                    // 기존에 'click' 클래스가 없었던 경우에만 클릭한 요소에 'click' 클래스 추가 (토글 효과)
+                    if (!isActive) {
+                        parentParent.classList.add("click");
+                    }
+                });
+            });
+        </script>
+        <main>
+            <div class="quick-menu" data-aos="fade-up-left" data-aos-offset="900" >
+                <a href="#" class="quick01"><span>가맹문의</span></a>
+                <a href="#" class="quick02"><span>벤티럭</span></a>
+                <a href="#" class="quick03"><span>TOP</span></a>
+            </div>
+            <section class="visual">
+                <!-- swiper01 -->
+                <div class="visual-slider swiper slider01">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img-box">
+                                <a href="#"><img src="img/visual.jpg" alt class="pc-view"></a>
+                                <a href="#"><img src="img/visual-1.jpg" alt class="mobile-view"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img-box">
+                                <a href="#"><img src="img/visual02.jpg" alt class="pc-view"></a>
+                                <a href="#"><img src="img/visual02-1.jpg" alt class="mobile-view"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img-box">
+                                <a href="#"><img src="img/visual03.jpg" alt class="pc-view"></a>
+                                <a href="#"><img src="img/visual03-1.jpg" alt class="mobile-view"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img-box">
+                                <a href="#"><img src="img/visual06.jpg" alt class="pc-view"></a>
+                                <a href="#"><img src="img/visual06-1.jpg" alt class="mobile-view"></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <script>
+                    var swiper01 = new Swiper(".slider01", {
+                        loop: true,
+                        clickable: true,
+                        autoplay: true,
+                        pagination: {
+                            el: ".swiper-pagination",
+                            clickable: true,
+                        },
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                    });
+                </script>
+            </section>
+            <section class="sec notice">
+                <div class="sec-in">
+                    <div class="not-box">
+                        <p><strong>공지사항</strong></h2>
+                            <!-- swiper02 -->
+                        <div class="swiper-box">
+                            <div class="notice-swiper swiper slider02">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="not-box01">
+                                            <p><a href="#">2024년 더벤티 상시 메뉴 영양성분 & 카페인 정보<span
+                                                        class="date">2024.09.09</span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="not-box01">
+                                            <p><a href="#">2024더벤티 저당 메뉴 영양성분 & 카페인 정보<span
+                                                        class="date">2024.07.26</span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="not-box01">
+                                            <p><a href="#">더벤티 저당음료 안내<span class="date">2024.05.07</span></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="not-box01">
+                                            <p><a href="#">더벤티 통합 멤버십 변경 안내<span class="date">2024.04.19</span></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-notice">
+                            <img src="img/more-btn.png" alt="공지 더보기">
+                        </div>
+                    </div>
+                    <script>
+                        var swiper02 = new Swiper(".slider02", {
+                            loop: true,
+                            autoplay: true,
+                            direction: "vertical",
+                        });
+                    </script>
+                </div>
+            </section>
+            <section class="sec menu">
+                <div class="sec-in">
+                    <div class="all-menu">
+                        <div class="menu-tit-box" >
+                            <h2><span>NEW</span></h2>
+                            <p>더벤티의 새로운 메뉴를 소개합니다.</p>
+                        </div>
+                        <div class="new-container">
+                            <div class="more-btn">
+                                <a href="#"><span>VIEW MORE</span></a>
+                            </div>
+                            <div class="flex-box">
+                                <div class="new-img-box" data-aos="flip-left" data-aos-duration="800" >
+                                    <a href="#"><img src="img/melting-cruiki.jpg" alt="멜팅&크루키"></a>
+                                </div>
+                                <!-- swiper03 -->
+                                <div class="menu-swiper swiper slider03">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <ul class="new-menu-box">
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="hover">
+                                                            <p>고소한 피스타치오 베이스에 멜팅 초코 크림이 어우러진 ‘멜팅 초코피스타치오’</p>
+                                                        </div>
+                                                        <img src="img/melting-choco-pistachio.png" alt="멜팅초코피스타치오">
+                                                        <em>멜팅 초코 피스타치오</em>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <ul class="new-menu-box">
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="hover">
+                                                            <p>달콤한 바나나 베이스에 진한 멜팅 초코 크림이 어우러진 ‘멜팅 초코바나나’
+                                                            </p>
+                                                        </div>
+                                                        <img src="img/melting-choco-banana.png" alt="멜팅초코피스타치오">
+                                                        <em>멜팅 초코 바나나</em>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <ul class="new-menu-box">
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="hover">
+                                                            <p>진한 멜팅 초코 크림과 우유가 어우러진 오리지날 ‘멜팅 초코’</p>
+                                                        </div>
+                                                        <img src="img/melting-choco-basic.png" alt="멜팅초코">
+                                                        <em>멜팅 초코</em>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <ul class="new-menu-box">
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="hover">
+                                                            <p>넛츠와 고소한 마카다미아가 올라간 ‘마카다미아 크쿠키’</p>
+                                                        </div>
+                                                        <img src="img/makadamia-cruiki.png" alt="마카다미아크루키">
+                                                        <em>마카다미아 크루키</em>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <ul class="new-menu-box">
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="hover">
+                                                            <p>치즈쿠키와 크럼블이 올라가 짭짤한 맛의 ‘치즈 크루키’</p>
+                                                        </div>
+                                                        <img src="img/cheese-cruiki.png" alt="치즈크루키">
+                                                        <em>치즈 크루키</em>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <ul class="new-menu-box">
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="hover">
+                                                            <p>초코쿠키와 초코칩이 올려진 ‘더블초코칩 크루키’</p>
+                                                        </div>
+                                                        <img src="img/dubble-chocolate-chip-cruiki.png" alt="더블초코 크루키">
+                                                        <em>더블초코 크루키</em>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            var swiper03 = new Swiper(".slider03", {
+                                // loop: true,
+                                slidesPerView: 3,
+                                spaceBetween: 10,
+                                pagination: {
+                                    el: ".swiper-pagination",
+                                },
+                                breakpoints: {
+                                    769: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 20,
+                                    },
+                                },
+                            });
+                        </script>
+                    </div>
+                </div>
+            </section>
+            <!-- video -->
+            <section class="sec ad">
+                <div class="sec-tit-box">
+                    <h2><span>THVENTI VIDEO</span></h2>
+                </div>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SLuDf5hVytU?si=ZTvKdKRSs0BLHIrJ"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </section>
+            <!-- animation -->
+            <div class="wrap">
+                <div class="wrap-box">
+                    <div class="rolling-list">
+                        <div class="rolling">Delicious Choice!</div>
+                        <div class="rolling02">TheVenti</div>
+                        <div class="rolling">Delicious Choice!</div>
+                        <div class="rolling02">TheVenti</div>
+                    </div>
+                </div>
+                <div class="wrap-box">
+                    <div class="rolling-list" id="roller3">
+                        <div class="rolling">Reasonable Choice!</div>
+                        <div class="rolling02">TheVenti</div>
+                        <div class="rolling">Reasonable Choice!</div>
+                        <div class="rolling02">TheVenti</div>
+                    </div>
+                    <div class="rolling-list" id="roller4">
+                        <div class="rolling">Reasonable Choice!</div>
+                        <div class="rolling02">TheVenti</div>
+                        <div class="rolling">Reasonable Choice!</div>
+                        <div class="rolling02">TheVenti</div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                let roller = document.querySelector('.rolling-list');
+            roller.id = 'roller1';
+            let clone = roller.cloneNode(true)
+
+            clone.id = 'roller2';
+            document.querySelector('.wrap-box').appendChild(clone);
+        
+            roller.classList.add('original');
+            clone.classList.add('clone');
+            </script>
+
+
+            <section class="sec event">
+                <div class="sec-in">
+                    <div class="sec-tit-box">
+                        <h2><span>EVENT</span></h2>
+                        <p>더벤티가 준비한 다양한 이벤트를 즐겨보세요!</p>
+                    </div>
+                    <ul class="event-list">
+                        <!-- hover -->
+                        <li>
+                            <div class="img-box">
+                                <a href="#"><img src="img/event01.jpg" alt="멜팅&크루키 이벤트"></a>
+                            </div>
+                            <div class="desc-box">
+                                <div class="desc-top">
+                                    <div class="event-box">
+                                        <strong>EVENT</strong>
+                                    </div>
+                                    <div class="desc-r" data-aos="fade-left" data-aos-duration="800">
+                                        <h3><a href="#">멜팅&크루키 출시 기념 EVENT!</a></h3>
+                                        <p><a href="#">멜팅 3종 30% 할인 쿠폰부터 멜팅& 크루키 세트 할인 혜택을 드립니다.</a></p>
+                                        <p><a href="#">2024-09-11 ~ 2024-09-24</a></p>
+                                    </div>
+                                </div>
+                                <div class="arrow-btn">
+                                    <a href="#"><img src="img/arrow-event.png" alt="더보기"></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-box">
+                                <a href="#"><img src="img/event02.jpg" alt="웨이비에이드 깜짝 이벤트"></a>
+                            </div>
+                            <div class="desc-box">
+                                <div class="desc-top">
+                                    <div class="event-box">
+                                        <strong>EVENT</strong>
+                                    </div>
+                                    <div class="desc-r" data-aos="fade-left" data-aos-duration="800">
+                                        <h3><a href="#">웨이비에이드 깜짝 EVENT!</a></h3>
+                                        <p><a href="#">옌니가 드리는 30% 깜짝 쿠폰 받아가세요!</a></p>
+                                        <p><a href="#">2024-09-23 ~ 2024-09-25</a></p>
+                                    </div>
+                                </div>
+                                <div class="arrow-btn">
+                                    <a href="#"><img src="img/arrow-event.png" alt="더보기"></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-box">
+                                <a href="#"><img src="img/event03.jpg" alt="[더벤티데이 x 부락페데이] 이벤트"></a>
+                            </div>
+                            <div class="desc-box02">
+                                <div class="desc-top">
+                                    <div class="event-box">
+                                        <strong>EVENT</strong>
+                                    </div>
+                                    <div class="desc-r" data-aos="fade-left" data-aos-duration="800">
+                                        <h3><a href="#">[더벤티데이 x 부락페데이] 9월 EVENT!
+                                            </a></h3>
+                                        <p><a href="#">더벤티 할인쿠폰부터 2024 부산국제록페스티벌 초대권까지!</a></p>
+                                        <p><a href="#">2024-09-20</a></p>
+                                    </div>
+                                </div>
+                                <div class="arrow-btn">
+                                    <a href="#"><img src="img/arrow-event.png" alt="더보기"></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="sec tvt-follow">
+                <div class="sec-in">
+                    <div class="follow-all">
+                        <div class="logo-img">
+                            <img src="img/theventi_h_logo.png" alt="더벤티로고이미지">
+                        </div>
+                        <p data-aos="fade-up" data-aos-duration="1500">더벤티와 함께해주시는 고객님과 가맹점주님, 파트타이머와 임직원까지<br>
+                            모두의 곁에서 믿음직한 상생 파트너로서 최선을 다하겠습니다.</p>
+                        <div class="btn-flex">
+                            <div class="inquire-btn">
+                                <a href="#">가맹문의</a>
+                            </div>
+                            <div class="brend-btn">
+                                <a href="#">브랜드소개</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sec instargram">
+                <div class="sec-tit-box">
+                    <h2><span>INSTARGRAM</span></h2>
+                    <a href="#"><u>@theventi_offical</u></a>
+                </div>
+                <!-- swiper04 -->
+                <div class="sns-swiper swiper slider04">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="in-img-box">
+                                <a href="#"><img src="img/instar01.jpg" alt="인스타그램"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="in-img-box">
+                                <a href=""><img src="img/instar02.jpg" alt="인스타그램"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="in-img-box">
+                                <a href=""><img src="img/instar03.jpg" alt="인스타그램"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="in-img-box">
+                                <a href="#"><img src="img/instar04.jpg" alt="인스타그램"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="in-img-box">
+                                <a href="#"><img src="img/instar05.jpg" alt="인스타그램"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="in-img-box">
+                                <a href="#"><img src="img/instar06.jpg" alt="인스타그램"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="in-img-box">
+                                <a href="#"><img src="img/instar07.jpg" alt="인스타그램"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var swiper04 = new Swiper(".slider04", {
+                        loop: true,
+                        autoplay: true,
+                        clickable: true,
+                        slidesPerView: 2.5,
+                        spaceBetween: 8,
+                        breakpoints: {
+                            500: {
+                                slidesPerView: 3
+                            },
+                            980: {
+                                slidesPerView: 4,
+                                spaceBetween: 10,
+                            },
+                            1450: {
+                                slidesPerView: 5,
+                                spaceBetween: 10,
+                            },
+                        }
+                    });
+                </script>
+            </section>
+            <section class="tvt-ease">
+                <div class="">
+                    <div class="ease-flex">
+                        <div class="ease-left">
+                            <div class="l-btn">
+                                <p data-aos="fade-left" data-aos-duration="1000">더벤티 앱으로 미리 주문하고, <br> 편리하게 이용해보세요!</p>
+                                <div class="btn-box">
+                                    <button type="button" class="order-btn">
+                                        <a href="#"><span>앱오더 주문하기</span></a>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="l-box">
+                                <div class="l-img-box">
+                                    <img src="img/main-icon1.png" alt="어플주문">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ease-right">
+                            <div class="r-btn">
+                                <p data-aos="fade-left" data-aos-duration="2000">지금, 가장 가까운 매장을<br> 이용해 보세요!</p>
+                                <form action="search-box" action="">
+                                    <input type="text" class="search-txt" placeholder="내주변 더벤티 매장 찾기">
+                                    <button type="button" class="btn-search">
+                                        <img src="img/icons860.png" alt="검색하기">
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="r-box">
+                                <div class="r-img-box">
+                                    <img src="img/main-icon2.png" alt="매장찾기">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="f-sec">
+                <div class="f-top">
+                    <div class="f-top-in">
+                        <ul class="f-link">
+                            <li><a href="#">더벤티 소개</a></li>
+                            <li><a href="#">제휴/제안</a></li>
+                            <li><a href="#">고객상담</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">이용약관</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="f-sec f-bottom">
+                    <div class="f-in">
+                        <a href="#"><img src="img/theventi_f_logo.png" alt="푸터로고"></a>
+                        <ul class="sns">
+                            <li><a href="#"><img src="img/naver-icon.png" alt="네이버"></a></li>
+                            <li><a href="#"><img src="img/instargram-icon.png" alt="인스타그램"></a></li>
+                            <li><a href="#"><img src="img/youyube-icon.png" alt="유튜브"></a></li>
+                            <li><a href="#"><img src="img/facebook-icon.png" alt="페이스북"></a></li>
+                        </ul>
+                        <div class="f-end">
+                            <p><span>더벤티 부산&교육센터</span>부산광역시 해운대구 센텀서로 30,2507호(KNN타워)</p>
+                            <p><span>더벤티 서울&교육센터</span>서울특별시 구로구 디지털로33길 27 408-414호</p>
+                            <address>
+                                <strong>(주)에스앤씨세인</strong>
+                                <p>사업자번호 : 534-88-00122</p>
+                                <p>대표이사 : 박수암 강삼남 최준경</p>
+                            </address>
+                            <p><span>가맹문의 : 1661-4553 </span> 고객센터 : 1644-0513</p>
+                            <p class="copy">&copy;Copyright © THEVENTI. All right Reserved. Created By Masstige.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

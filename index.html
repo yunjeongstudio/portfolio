@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTFOLIO</title>
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./font/pretendard/pre.css">
+  <link rel="stylesheet" href="./Portfolio/css/portfolio.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./js/jquery-3.7.1.min.js"></script>
+  <script src="./js/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <!-- 헤더 시작 -->
+    <header>
+      <div class="h-inner">
+        <div class="h-in">
+          <ul class="menu">
+            <li><a href="#about-me">#about</a></li>
+            <li><a href="#skill-me">#skill</a></li>
+            <li><a href="#project-me">#project</a></li>
+            <li><a href="#design-me">#design</a></li>
+            <li><a href="#contact-me">#contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- 비주얼 시작 -->
+      <section class="wrapper">
+        <div class="blur"></div>
+        <div class="blur"></div>
+        <div class="blur"></div>
+        <h1>Welcome to my Portfolio!</h1>
+        <h2 class="credit">Made by Lee YoonJeong</h2>
+      </section>
+      <!--비주얼 스크립트 시작 -->
+      <script>
+        console.clear();
+        const randomX = random(-400, 400);
+        const randomY = random(-200, 200);
+        const randomDelay = random(0, 50);
+        const randomTime = random(6, 12);
+        const randomTime2 = random(5, 6);
+        const randomAngle = random(-30, 150);
+        const blurs = gsap.utils.toArray(".blur");
+        blurs.forEach((blur) => {
+          gsap.set(blur, {
+            x: randomX(-1),
+            y: randomX(1),
+            rotation: randomAngle(-1)
+          });
+          moveX(blur, 1);
+          moveY(blur, -1);
+          rotate(blur, 1);
+        });
+        function rotate(target, direction) {
+          gsap.to(target, randomTime2(), {
+            rotation: randomAngle(direction),
+            // delay: randomDelay(),
+            ease: Sine.easeInOut,
+            onComplete: rotate,
+            onCompleteParams: [target, direction * -1]
+          });
+        }
+        function moveX(target, direction) {
+          gsap.to(target, randomTime(), {
+            x: randomX(direction),
+            ease: Sine.easeInOut,
+            onComplete: moveX,
+            onCompleteParams: [target, direction * -1]
+          });
+        }
+        function moveY(target, direction) {
+          gsap.to(target, randomTime(), {
+            y: randomY(direction),
+            ease: Sine.easeInOut,
+            onComplete: moveY,
+            onCompleteParams: [target, direction * -1]
+          });
+        }
+        function random(min, max) {
+          const delta = max - min;
+          return (direction = 1) => (min + delta * Math.random()) * direction;
+        }
+      </script>
+      <!-- about me 시작 -->
+      <section class="t-top about" id="about-me">
+        <div class="about-in">
+          <div class="info-box01"><!-- 프로필-->
+            <div class="my-img-box">
+              <div class="img-in">
+                <img src="./Portfolio/img/png-me.png" alt="이윤정">
+              </div>
+            </div>
+            <div class="profile">
+              <div class="profile-tit">
+                <h2>PROFILE</h2>
+              </div>
+              <div class="info-f-box">
+                <div class="info-txt-box">
+                  <p><span>NAME</span><br> 이윤정</p>
+                  <p><span>AGE</span><br> 2001.03.15</p>
+                </div>
+                <div class="info-txt-box">
+                  <p><span>H.P</span><br> 010-7211-3623</p>
+                  <p><span>E-mail</span><br> iyunjeong315@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="r-container">
+            <div class="info-box02"><!-- education, work -->
+              <div class="edu">
+                <h3 class="edu-tit"><span>Education</span></h3>
+                <ul>
+                  <li><span>2017.03~2020.03</span> 동명여자고등학교 졸업</li>
+                  <li><span>2020.03~2023.03</span> 한양여자대학교 섬유패션디자인과 졸업</li>
+                  <li><span>2024.6 ~ 2024.11 </span> 신촌 하이미디어 아카데미  Figma 활용 UI/UX 반응형 웹디자인&웹퍼블리셔 과정 수료</li>
+                </ul>
+              </div>
+              <div class="work">
+                <h3 class="work-tit"><span>Work</span></h3>
+                <p><span>2023.03~2023.08</span><br>
+                  의류 프로모션 디자이너</p>
+              </div>
+            </div>
+            <div class="info-box03"><!--license -->
+              <div class="license">
+                <h3 class="lic-tit"><span>License</span></h3>
+                <ul>
+                  <li><span>2020.12 </span> GTQ 일러스트 1급 합격</li>
+                  <li><span>2020.12 </span>한국의상디자인학회 제 17회 넥타이디자인 공모전 (특선)</li>
+                  <li><span> 2022.07 </span>대한민국텍스타일디자인대전 제33회 인테리어 부문 (입선)</li>
+                  <li><span> 22024.09 </span>웹디자인기능사 (필기합격)</li>
+                  <li><span>2024.09 </span>정보처리기능사 (필기합격)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- skill 시작 -->
+      <section class="t-top skill" id="skill-me">
+        <h2>SKILL</h2>
+        <div class="all-skill">
+          <div class="skill-top" data-aos="fade-up" data-aos-duration="1000">
+            <div class="icon-bx">
+              <img src="./Portfolio/img/PS.png" alt="포토샵">
+              <span>Photoshop</span>
+            </div>
+            <div class="icon-bx">
+              <img src="./Portfolio/img/AI.png" alt="일러스트">
+              <span>Illustrator</span>
+            </div>
+            <div class="icon-bx">
+              <img src="./Portfolio/img/figma.png" alt="피그마">
+              <span>Figma</span>
+            </div>
+          </div>
+          <div class="skill-btm" data-aos="fade-up" data-aos-duration="1000">
+            <div class="icon-bx">
+              <img src="./Portfolio/img/CSS.png" alt="css">
+              <span>CSS</span>
+            </div>
+            <div class="icon-bx">
+              <img src="./Portfolio/img/HTML.png" alt="html">
+              <span>HTML</span>
+            </div>
+            <div class="icon-bx">
+              <img src="./Portfolio/img/studiocode.png" alt="비주얼 스튜디오 코드">
+              <span>VS Code</span>
+            </div>
+            <div class="icon-bx">
+              <img src="./Portfolio/img/jQuery.png" alt="제이쿼리">
+              <span>jQuery</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 포트폴리오 시작 -->
+      <section class="t-top Portfolio" id="project-me">
+        <h2>PROJECT</h2>
+        <div class="project01" data-aos="fade-up" data-aos-duration="1000">
+          <div class="mockup-bx mockup">
+            <span class="v-span"><img src="./Portfolio/img/theventi-pc-ver.png" alt="목업이미지"></span>
+          </div>
+          <div class="mockup-txt">
+            <h3 class="venti">TheVenti</h3>
+            <span>반응형 웹사이트 리디자인</span>
+            <p>상업용 페이지와 인크루트 페이지의 모호한 기준점을 정립하고자 사용자가 필요로 하는 섹션으로 리디자인 재배치하였습니다.</p>
+            <div class="btn-area">
+              <a href="https://www.theventi.co.kr/new2022/main/main.html" target="_blank" class="oribtn">Original</a>
+              <a href="./the-venti/index.html" target="_blank" class="oribtn">Redesign</a>
+              <a href="./Portfolio/pdf/theventi-process.pdf" target="_blank" class="oribtn">Peocess</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="t-top Portfolio">
+        <div class="project02" data-aos="fade-up" data-aos-duration="1000">
+          <div class="mockup-txt">
+            <h3 class="store-b">아름다운 가게</h3>
+            <span>반응형 웹사이트 리디자인</span>
+            <p>아름다운 가게의 오리지널 색상과 캐릭터를 활용해
+              기업의 아이덴티티에 주목했습니다.
+              사이트의 신뢰성을 부각하고자 기업의 가치관과 목적성을 다양한 구성으로 리디자인 재배치하였습니다. </p>
+            <div class="btn-area">
+              <a href="https://www.beautifulstore.org/" target="_blank" class="oribtn">Original</a>
+              <a href="./beautifulstore/index.html" target="_blank" class="oribtn">Redesign</a>
+              <a href="./Portfolio/pdf/BeautifulStore-process.pdf" target="_blank" class="oribtn">Process</a>
+            </div>
+          </div>
+          <div class="mockup-bx">
+            <span><img src="./Portfolio/img/store-pc-ver.png" alt="목업이미지"></span>
+          </div>
+        </div>
+      </section>
+      <!-- 디자인 시작 -->
+      <section class="t-top design" id="design-me">
+        <h2>DESIGN</h2>
+        <p>상세페이지 & 배너디자인</p>
+        <div class="swiper mySwiper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="dsnimg-box">
+                <a href="./Portfolio/pdf/BaskinRobbin.pdf" target="_blank"><img src="./Portfolio/img/Baskin-Robbins.png" alt=""></a>
+                <p><span>배스킨라빈스 이벤트 페이지</span></p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="dsnimg-box">
+                <a href="./Portfolio/pdf/Jinro-soju.pdf" target="_blank"><img src="./Portfolio/img/soju.png" alt=""></a>
+                <p><span>진로소주x빵빵이 상세페이지</span></p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="dsnimg-box">
+                <a href="./Portfolio/pdf/Compose.pdf" target="_blank"><img src="./Portfolio/img/compose.png" alt=""></a>
+                <p><span>컴포즈 이벤트 페이지</span></p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="dsnimg-box">
+                <a href="./Portfolio/pdf/Slimcook-delivery.pdf" target="_blank"><img src="./Portfolio/img/slimcook-delivery.png" alt=""></a>
+                <p><span>슬림쿡 이벤트 페이지</span></p>
+              </div>
+            </div>
+          </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+       
+      </section>
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          slidesPerView: 2,
+
+          loop: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+              
+            },
+            980: {
+              slidesPerView: 3,
+            },
+          },
+        });
+      </script>
+      <!-- 컨텍 시작 -->
+      <section class="t-top contact" id="contact-me">
+        <h2>CONTACT</h2>
+        <p data-aos="fade-up" data-aos-duration="1000">"호기심과 소통으로 발전하는 디자이너가 되겠습니다."</p>
+        <a href="./Portfolio/pdf/2025-resume.pdf" target="_blank"><span>이력서 바로가기</span></a>
+        <address class="from">
+          <div class="from-in">
+            <p class="hp"><span>H.P </span> 010-7211-3623</p>
+            <p class="mail"><span>E-mail </span> iyunjeong315@gmail.com</p>
+          </div>
+        </address>
+      </section>
+    </main>
+    <!-- 푸터 시작 -->
+    <footer>
+      <div class="f-txt-box">
+        <p>Thank you for watching.</p>
+        <p class="copy">&copy;Copyright © 2024 Lee, yoon-jeong. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    AOS.init();
+</script>
+</body>
+</html>

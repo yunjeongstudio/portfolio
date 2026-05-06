@@ -20,6 +20,7 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/swiper-bundle.min.js"></script>
 </head>
+
 <body>
     <div id="wrap">
         <header>
@@ -90,22 +91,22 @@
             const mBtn = document.querySelectorAll(".tit-m");
             mBtn.forEach((mbtn, index) => {
                 mbtn.addEventListener("click", function () {
-                    // 클릭한 버튼의 부모의 부모가 'click' 클래스를 이미 가지고 있는지 확인
+
                     const parentParent = mbtn.parentElement.parentElement;
                     const isActive = parentParent.classList.contains("click");
 
-                    // 모든 버튼의 부모의 부모에서 'click' 클래스 제거
+
                     mBtn.forEach(otherbtn => otherbtn.parentElement.parentElement.classList.remove("click"));
 
-                    // 기존에 'click' 클래스가 없었던 경우에만 클릭한 요소에 'click' 클래스 추가 (토글 효과)
-                    if (!isActive) {
-                        parentParent.classList.add("click");
-                    }
-                });
+                    (토글 효과)
+                if (!isActive) {
+                    parentParent.classList.add("click");
+                }
+            });
             });
         </script>
         <main>
-            <div class="quick-menu" data-aos="fade-up-left" data-aos-offset="900" >
+            <div class="quick-menu" data-aos="fade-up-left" data-aos-offset="900">
                 <a href="#" class="quick01"><span>가맹문의</span></a>
                 <a href="#" class="quick02"><span>벤티럭</span></a>
                 <a href="#" class="quick03"><span>TOP</span></a>
@@ -211,7 +212,7 @@
             <section class="sec menu">
                 <div class="sec-in">
                     <div class="all-menu">
-                        <div class="menu-tit-box" >
+                        <div class="menu-tit-box">
                             <h2><span>NEW</span></h2>
                             <p>더벤티의 새로운 메뉴를 소개합니다.</p>
                         </div>
@@ -220,12 +221,13 @@
                                 <a href="#"><span>VIEW MORE</span></a>
                             </div>
                             <div class="flex-box">
-                                <div class="new-img-box" data-aos="flip-left" data-aos-duration="800" >
+                                <div class="new-img-box" data-aos="flip-left" data-aos-duration="800">
                                     <a href="#"><img src="img/melting-cruiki.jpg" alt="멜팅&크루키"></a>
                                 </div>
                                 <!-- swiper03 -->
                                 <div class="menu-swiper swiper slider03">
                                     <div class="swiper-wrapper">
+
                                         <div class="swiper-slide">
                                             <ul class="new-menu-box">
                                                 <li>
@@ -237,24 +239,17 @@
                                                         <em>멜팅 초코 피스타치오</em>
                                                     </a>
                                                 </li>
-                                            </ul>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <ul class="new-menu-box">
+
                                                 <li>
                                                     <a href="#">
                                                         <div class="hover">
-                                                            <p>달콤한 바나나 베이스에 진한 멜팅 초코 크림이 어우러진 ‘멜팅 초코바나나’
-                                                            </p>
+                                                            <p>달콤한 바나나 베이스에 진한 멜팅 초코 크림이 어우러진 ‘멜팅 초코바나나’</p>
                                                         </div>
-                                                        <img src="img/melting-choco-banana.png" alt="멜팅초코피스타치오">
+                                                        <img src="img/melting-choco-banana.png" alt="멜팅초코바나나">
                                                         <em>멜팅 초코 바나나</em>
                                                     </a>
                                                 </li>
-                                            </ul>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <ul class="new-menu-box">
+
                                                 <li>
                                                     <a href="#">
                                                         <div class="hover">
@@ -266,21 +261,19 @@
                                                 </li>
                                             </ul>
                                         </div>
+
                                         <div class="swiper-slide">
                                             <ul class="new-menu-box">
                                                 <li>
                                                     <a href="#">
                                                         <div class="hover">
-                                                            <p>넛츠와 고소한 마카다미아가 올라간 ‘마카다미아 크쿠키’</p>
+                                                            <p>넛츠와 고소한 마카다미아가 올라간 ‘마카다미아 크루키’</p>
                                                         </div>
                                                         <img src="img/makadamia-cruiki.png" alt="마카다미아크루키">
                                                         <em>마카다미아 크루키</em>
                                                     </a>
                                                 </li>
-                                            </ul>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <ul class="new-menu-box">
+
                                                 <li>
                                                     <a href="#">
                                                         <div class="hover">
@@ -290,10 +283,7 @@
                                                         <em>치즈 크루키</em>
                                                     </a>
                                                 </li>
-                                            </ul>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <ul class="new-menu-box">
+
                                                 <li>
                                                     <a href="#">
                                                         <div class="hover">
@@ -305,29 +295,25 @@
                                                 </li>
                                             </ul>
                                         </div>
+
                                     </div>
+
                                     <div class="swiper-pagination"></div>
                                 </div>
+                                <script>
+                                    window.addEventListener("load", function () {
+                                        var swiper03 = new Swiper(".slider03", {
+                                            slidesPerView: 1,
+                                            spaceBetween: 20,
+                                            pagination: {
+                                                el: ".slider03 .swiper-pagination",
+                                                clickable: true,
+                                            },
+                                        });
+                                    });
+                                </script>
                             </div>
                         </div>
-                        <script>
-                            var swiper03 = new Swiper(".slider03", {
-                                // loop: true,
-                                slidesPerView: 3,
-                                spaceBetween: 10,
-                                pagination: {
-                                    el: ".swiper-pagination",
-                                },
-                                breakpoints: {
-                                    769: {
-                                        slidesPerView: 3,
-                                        spaceBetween: 20,
-                                    },
-                                },
-                            });
-                        </script>
-                    </div>
-                </div>
             </section>
             <!-- video -->
             <section class="sec ad">
@@ -335,11 +321,12 @@
                     <h2><span>THVENTI VIDEO</span></h2>
                 </div>
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SLuDf5hVytU?si=ZTvKdKRSs0BLHIrJ"
-                        title="YouTube video player" frameborder="0"
+                    <iframe src="https://www.youtube.com/embed/r0aBUuNL6Kk" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        allowfullscreen>
+                    </iframe>
                 </div>
+
             </section>
             <!-- animation -->
             <div class="wrap">
@@ -368,14 +355,14 @@
             </div>
             <script>
                 let roller = document.querySelector('.rolling-list');
-            roller.id = 'roller1';
-            let clone = roller.cloneNode(true)
+                roller.id = 'roller1';
+                let clone = roller.cloneNode(true)
 
-            clone.id = 'roller2';
-            document.querySelector('.wrap-box').appendChild(clone);
-        
-            roller.classList.add('original');
-            clone.classList.add('clone');
+                clone.id = 'roller2';
+                document.querySelector('.wrap-box').appendChild(clone);
+
+                roller.classList.add('original');
+                clone.classList.add('clone');
             </script>
 
 

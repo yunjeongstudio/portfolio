@@ -350,12 +350,12 @@ section.sec.notice {
    
 }
 .flex-box {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     align-items: flex-end;
 }
 .flex-box02 {
-    max-width: calc(100%-33.33vw)
+    max-width: calc(100% - 33.33vw);
 }
 .all-menu {
     margin-top: max(8.3vw, 100px);
@@ -400,11 +400,19 @@ section.sec.notice {
     width: max(31.25vw, 204px);
 }
 .new-menu-box {
+    display: flex;
+    gap: 20px;
     width: 100%;
     box-sizing: border-box;
     margin-top: calc(100vw*(20 / 1920));
     margin-left: calc(100vw*(24 / 1920));;
     height: calc(100vw*(320 / 1920));
+    border-radius: 10px;
+    overflow: hidden;
+}
+.new-menu-box > li {
+    flex: 1;
+    height: 100%;
     border-radius: 10px;
     background-color: var(--bg3);
     overflow: hidden;
@@ -448,11 +456,9 @@ ul.new-menu-box>li {
 .new-menu-box > li > a > img {
     width: calc(100vw*(120/1920));
 }
-.menu-swiper.swiper.slider03.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
-    height: calc(100vw*(420/1920));
-}
+
 .more-btn > a > span {
-    display: flex;
+    display: flex;x`
     color: var(--bg1);
     align-items: center;
     gap: 6px;
@@ -465,17 +471,34 @@ ul.new-menu-box>li {
     background: url(../img/arrow_btn.png) no-repeat center / 100%;
 }
 
-.menu-swiper > .swiper-pagination > span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-    /* background-color: #b65cd3; */
-    background: url(../img/logo-icon-vcolor.png) no-repeat center / 100%;
-    width: 22px;
-    height: 22px;
-    border-radius: 10px;
+
+.menu-swiper {
+    padding-bottom: 0px;
 }
-.menu-swiper > .swiper-pagination {
+
+.menu-swiper .swiper-pagination {
+    position: static;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 8px;
+}
+
+.menu-swiper .swiper-pagination-bullet {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 0 !important;
+    background: #c9c9c9;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.menu-swiper .swiper-pagination-bullet-active {
+    width: 24px;
+    height: 18px;
+    background: url("../img/logo-icon-vcolor.png") no-repeat center / contain;
+    border-radius: 0;
 }
 
 @media(max-width:1440px) {
@@ -542,9 +565,11 @@ ul.new-menu-box>li {
     .new-menu-box > li > a > img {
         width: 10.2vw;
     }
-    .menu-swiper.swiper.slider03.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
-        height: 32vw;
-    }
+    .menu-swiper {
+    height: 32vw;
+    padding-bottom: 45px;
+   }
+
     .new-menu-box > li > a > em {
         font-size: 1.68vw;
     }
@@ -583,8 +608,8 @@ ul.new-menu-box>li {
         font-size: 11px;
         letter-spacing: -0.7px;
     }
-    .menu-swiper.swiper.slider03.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
-        height: 180px;
+    .menu-swiper {
+    height: 180px;
     }
     .more-btn {
         bottom: 184px;
@@ -599,37 +624,41 @@ ul.new-menu-box>li {
     margin-left: 12vw;
     margin-right: 12vw;
 }
+
 .video-container {
     position: relative;
     width: 100%;
     margin: 0 auto;
     height: 0;
     border-radius: 20px;
-    overflow: hidden;  
-    padding-top: calc(9/16 * 100%);
+    overflow: hidden;
+    padding-bottom: 56.25%;
 }
-iframe {
+
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
+
 @media (max-width:980px) {
     .video-container {
         border-radius: 16px;
     }
+
     .ad {
         margin-bottom: 10vw;
         margin-left: 4vw;
         margin-right: 4vw;
     }
 }
+
 @media (max-width:500px) {
     .video-container {
         border-radius: 12px;
     }
-
 }
 
 

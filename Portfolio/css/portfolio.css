@@ -1001,25 +1001,23 @@ section.t-top {
 }
 
 .art-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2vw;
+   display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:2vw;
 }
 
-.art-item {
-  width: 23%;
-}
 
 
 @media(max-width:980px) {
-  .art-item {
-    width: 45%;
+   .art-list{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+
 @media(max-width:500px) {
-  .art-item {
-    width: 100%;
+    .art-list{
+    grid-template-columns: 1fr;
   }
 }
 
